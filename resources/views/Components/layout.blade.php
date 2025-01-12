@@ -43,7 +43,7 @@
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <x-navbar href="/"  :active="request()->is('/')" >Home</x-navbar>
             <x-navbar href="/contact" :active="request()->is('contact')" >Contact</x-navbar>
-            <x-navbar href="/about" :active="request()->is('about')">About</x-navbar>
+            <x-navbar href="/about" type="button" :active="request()->is('about')">About</x-navbar>
           
         </div>
       </div>
