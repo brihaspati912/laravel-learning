@@ -1,14 +1,17 @@
 <x-layout>
      <x-slot:heading>
-        About dashboard
+        <strong>Jobs dashboard</strong>
         <hr>
     </x-slot:heading>
 
- <ul class="list-disc align-content: center ">  
+ <ul class="list-disc px-5">  
+
   
 @foreach ($jobs as $job)
+<a href="/jobs/{{$job['id']}}" ><li>{{$job["title"]}}: pays job salary {{$job["salary"]}}</li></a>
 
-  <li>{{   $job["title"]}} pays job salary {{$job["salary"]}}</li>
+
+
  
 @endforeach
  </ul> 
