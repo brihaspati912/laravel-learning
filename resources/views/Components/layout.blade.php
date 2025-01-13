@@ -7,7 +7,7 @@
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body  class="h-full bg-gray" style="background:rgb(244, 243, 243)" >
    <nav class="bg-gray-800">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
@@ -38,12 +38,12 @@
         <div class="flex shrink-0 items-center">
           <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
         </div>
-        <div class="hidden sm:ml-6 sm:block">
-          <div class="flex space-x-4">
+        <div class="hidden sm:ml-6 sm:block ">
+          <div class="flex space-x-4 ">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <x-navbar href="/"  :active="request()->is('/')" >Home</x-navbar>
             <x-navbar href="/contact" :active="request()->is('contact')" >Contact</x-navbar>
-            <x-navbar href="/about" type="button" :active="request()->is('about')">About</x-navbar>
+            <x-navbar href="/jobs"  :active="request()->is('about')">Jobs</x-navbar>
           
         </div>
       </div>
@@ -78,9 +78,9 @@
 </nav>
 
 <main>
-    {{$heading}}
+  <h3 class="px-4 py-4"> {{$heading}}</h3> 
     
-    <h1>{{$slot}}</h1>
+    {{$slot}}
 </main>
 
 
