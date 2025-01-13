@@ -2,30 +2,7 @@
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
-
-class Job
-{
-    public static function all(): array
-    {
-        return  [
-            [
-                'id' => 1,
-                'title' => "Web Developer",
-                "salary" => "3000$",
-            ],
-            [
-                'id' => 2,
-                'title' => "Android Developer",
-                "salary" => "8000$",
-            ],
-            [
-                'id' => 3,
-                'title' => "IOS Developer",
-                "salary" => "30000$",
-            ]
-        ];
-    }
-}
+use App\Models\Job;
 
 
 
@@ -82,7 +59,8 @@ Route::middleware([\App\Http\Middleware\Cors::class])->group(function ($id) {
     Route::get('/jobs/{id}', function ($id) {
 
         // Return the job data
-        $job = Arr::first(Job::all(), fn($job) => $job['id'] == $id);
+        $job = Job::find($id);
+
 
 
         // dd($job); tocheck the function returns the found job and so we can pass it
